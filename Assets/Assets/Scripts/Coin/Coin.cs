@@ -20,13 +20,20 @@ public class Coin : MonoBehaviour
             _conffeti.Play();
             _coinSourse.PlayOneShot(_coinSound, 1f);
             StartCoroutine(Conffeti());
-            
+           
+            gameObject.SetActive(false);
         }
+
     }
+
+
     public IEnumerator Conffeti()
     {
         yield return new WaitForSeconds(0.15f);
-        _coin.SetActive(false);
         Score.Instance.AddPoint();
+        _coin.SetActive(false);
+       
     }
+
+    
 }

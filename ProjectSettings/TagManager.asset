@@ -9,6 +9,8 @@ TagManager:
   - Jugador
   - Coin
   - Destroyer
+  - CoinDetector
+  - Magnet
   layers:
   - Default
   - TransparentFX

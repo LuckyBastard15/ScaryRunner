@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     private int _currentPillar = 0;
     private bool _isRight = true;
+    Coin _grabedCoin;
 
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Pillar[] _pillars = null;
@@ -18,6 +19,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private AudioClip _leftSound;
     [SerializeField] private AudioSource _rightSource;
     [SerializeField] private AudioClip _rightSound;
+
+    
 
     private void Start()
     {
@@ -85,6 +88,7 @@ public class CharacterMovement : MonoBehaviour
             _animLoosePlayer.SetTrigger("Dead");
             StartCoroutine(Crash());
         }
+        
     }
 
     public IEnumerator Crash()
