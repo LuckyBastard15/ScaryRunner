@@ -28,9 +28,10 @@ public class StartButton : MonoBehaviour
 
     public void StartButto()
     {
-        _startSource.PlayOneShot(_startSound, 1f);
-        SceneManager.LoadScene("Game");
         Time.timeScale = 1;
+        SceneManager.LoadScene("Game");
+        _startSource.PlayOneShot(_startSound, 1f);
+       
     }
 
     public void ExitButton()
