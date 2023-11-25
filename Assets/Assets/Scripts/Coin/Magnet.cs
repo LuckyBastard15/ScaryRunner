@@ -26,7 +26,7 @@ public class Magnet : MonoBehaviour
     {
         
         yield return new WaitForSeconds(10f);
-        this.enabled = false;
+        
         
     }
 
