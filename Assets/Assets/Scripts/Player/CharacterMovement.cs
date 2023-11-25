@@ -19,11 +19,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private AudioClip _leftSound;
     [SerializeField] private AudioSource _rightSource;
     [SerializeField] private AudioClip _rightSound;
+    
+    //[SerializeField] private CoinMovement _coinPowerUp;
+    [SerializeField] private GameObject _coinPrefab;
+
+
 
     
 
     private void Start()
     {
+        _coinPrefab = GameObject.FindGameObjectWithTag("Coin");
         UpdatePosition();
         _crash = GetComponent<ParticleSystem>();
         _loseSource = GetComponent<AudioSource>();
@@ -88,7 +94,12 @@ public class CharacterMovement : MonoBehaviour
             _animLoosePlayer.SetTrigger("Dead");
             StartCoroutine(Crash());
         }
-        
+
+        if (other.CompareTag("Magnet"))
+        {
+           // _coinPrefab.transform.DOMove(transform.position, 5f);
+        }
+
     }
 
     public IEnumerator Crash()

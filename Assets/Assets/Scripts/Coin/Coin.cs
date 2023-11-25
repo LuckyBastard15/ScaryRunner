@@ -17,11 +17,12 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Jugador"))
         {
+            Score.Instance.AddPoint();
             _conffeti.Play();
             _coinSourse.PlayOneShot(_coinSound, 1f);
             StartCoroutine(Conffeti());
            
-            gameObject.SetActive(false);
+
         }
 
     }
@@ -30,10 +31,10 @@ public class Coin : MonoBehaviour
     public IEnumerator Conffeti()
     {
         yield return new WaitForSeconds(0.15f);
-        Score.Instance.AddPoint();
         _coin.SetActive(false);
-       
+        gameObject.SetActive(false);
+
     }
 
-    
+
 }

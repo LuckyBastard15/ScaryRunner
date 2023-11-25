@@ -6,7 +6,7 @@ public class Magnet : MonoBehaviour
 {
 
     public GameObject _coinDetector;
-    CoinMovement _coinScript;
+    public CoinMovement _coinScript;
 
     
     public int _speed = 10;

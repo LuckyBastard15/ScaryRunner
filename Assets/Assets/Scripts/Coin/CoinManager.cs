@@ -7,13 +7,13 @@ public class CoinManager : MonoBehaviour
     [SerializeField] private GameObject _coinPrefab = default;
     [SerializeField] private float _speed = 13;
     [SerializeField] private GameObject Player;
-    public bool Magnet;
+   
 
     void Start()
     {
         
         InvokeRepeating(nameof(SpawnNewCoin),0.5f,0.5f);
-        Magnet = false;
+        
     }
 
     private void Update()
