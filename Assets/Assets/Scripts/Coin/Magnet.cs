@@ -1,41 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Magnet : MonoBehaviour
 {
 
-    public GameObject _coinDetector;
-    public CoinMovement _coinScript;
+    //public GameObject _coinDetector;
+    public GameObject _coinPrefab;
 
-    
+
     public int _speed = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        _coinDetector = GameObject.FindGameObjectWithTag("CoinDetector");
-       
-
-        _coinDetector.SetActive(false);
-       
-
+        //_coinDetector = GameObject.FindGameObjectWithTag("CoinDetector");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.gameObject.tag == "Jugador")
-        {
-            StartCoroutine(ActivateCoin());     
-
-        }
+        _coinPrefab.transform.DOMove(transform.position, 105f);
     }
     IEnumerator ActivateCoin()
     {
-        _coinDetector.SetActive(true);
-        //_coinScript.enabled = false;
+        
         yield return new WaitForSeconds(10f);
-        _coinDetector.SetActive(false);
+        this.enabled = false;
         
     }
 

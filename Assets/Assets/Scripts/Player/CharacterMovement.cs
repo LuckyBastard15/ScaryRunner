@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Pillar[] _pillars = null;
+    [SerializeField] private Magnet _Magnet;
     [SerializeField] private Animator _animLooseMenu = default;
     [SerializeField] private Animator _animLoosePlayer = default;
     [SerializeField] private ParticleSystem _crash = default;
@@ -21,15 +22,13 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private AudioClip _rightSound;
     
     //[SerializeField] private CoinMovement _coinPowerUp;
-    [SerializeField] private GameObject _coinPrefab;
 
-
+   
 
     
 
     private void Start()
     {
-        _coinPrefab = GameObject.FindGameObjectWithTag("Coin");
         UpdatePosition();
         _crash = GetComponent<ParticleSystem>();
         _loseSource = GetComponent<AudioSource>();
@@ -39,6 +38,8 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
+       
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             MoveRight();
@@ -97,11 +98,10 @@ public class CharacterMovement : MonoBehaviour
 
         if (other.CompareTag("Magnet"))
         {
-           // _coinPrefab.transform.DOMove(transform.position, 5f);
+            _Magnet.enabled = true;
         }
 
     }
-
     public IEnumerator Crash()
     {
         yield return new WaitForSecondsRealtime(1.25f);
