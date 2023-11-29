@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Coin : MonoBehaviour
     [SerializeField] private ParticleSystem _conffeti;
     [SerializeField] private AudioSource _coinSourse;
     [SerializeField] private AudioClip _coinSound;
+    private Transform _player = default;
+    public CoinMovement DesableCoin;
 
     private void Start()
     {
@@ -21,8 +24,19 @@ public class Coin : MonoBehaviour
             _conffeti.Play();
             _coinSourse.PlayOneShot(_coinSound, 1f);
             StartCoroutine(Conffeti());
-           
 
+        }
+        
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("GrabCoins"))
+        {
+            //Debug.Log("CoinGrab");
+            DesableCoin.DesableMove();
+
+            _coin.transform.position = _player.transform.position;
         }
 
     }

@@ -4,13 +4,14 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public static Transform Instance;
+
     private int _currentPillar = 0;
     private bool _isRight = true;
     Coin _grabedCoin;
 
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Pillar[] _pillars = null;
-    [SerializeField] private Magnet _Magnet;
     [SerializeField] private Animator _animLooseMenu = default;
     [SerializeField] private Animator _animLoosePlayer = default;
     [SerializeField] private ParticleSystem _crash = default;
@@ -20,11 +21,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private AudioClip _leftSound;
     [SerializeField] private AudioSource _rightSource;
     [SerializeField] private AudioClip _rightSound;
-    
+    [SerializeField] private GameObject _coin;
+
     //[SerializeField] private CoinMovement _coinPowerUp;
-
-   
-
     
 
     private void Start()
@@ -95,12 +94,6 @@ public class CharacterMovement : MonoBehaviour
             _animLoosePlayer.SetTrigger("Dead");
             StartCoroutine(Crash());
         }
-
-        if (other.CompareTag("Magnet"))
-        {
-            _Magnet.enabled = true;
-        }
-
     }
     public IEnumerator Crash()
     {

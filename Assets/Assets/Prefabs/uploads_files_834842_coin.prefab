@@ -63,9 +63,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3163770439380494374, guid: d752716825489a94fb976a24a1191047, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d752716825489a94fb976a24a1191047, type: 3}
       propertyPath: m_Name
       value: uploads_files_834842_coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d752716825489a94fb976a24a1191047, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d752716825489a94fb976a24a1191047, type: 3}
       propertyPath: m_IsActive
@@ -74,6 +82,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d752716825489a94fb976a24a1191047, type: 3}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299534335721187760, guid: d752716825489a94fb976a24a1191047, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398699354431751714, guid: d752716825489a94fb976a24a1191047, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338401491540753124, guid: d752716825489a94fb976a24a1191047, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2223639932434330405, guid: d752716825489a94fb976a24a1191047, type: 3}
@@ -5072,6 +5092,7 @@ MonoBehaviour:
   _conffeti: {fileID: -6476705232216298112}
   _coinSourse: {fileID: 3213568439726559861}
   _coinSound: {fileID: 8300000, guid: e1a8f1d7456a04d4c9d04ecd3f868747, type: 3}
+  DesableCoin: {fileID: 8631500697106912355}
 --- !u!114 &7571864936886012879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,3 +5119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 13
+  _Move: 0
+  _move: 0

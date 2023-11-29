@@ -11,14 +11,15 @@ TagManager:
   - Destroyer
   - CoinDetector
   - Magnet
+  - GrabCoins
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PowerUp
   - Water
   - UI
-  - 
+  - Coin
   - 
   - 
   - 
