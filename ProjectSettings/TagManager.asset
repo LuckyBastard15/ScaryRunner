@@ -12,6 +12,9 @@ TagManager:
   - CoinDetector
   - Magnet
   - GrabCoins
+  - Arriba
+  - Derecha
+  - Izquieda
   layers:
   - Default
   - TransparentFX
@@ -20,7 +23,7 @@ TagManager:
   - Water
   - UI
   - Coin
-  - 
+  - Activator
   - 
   - 
   - 

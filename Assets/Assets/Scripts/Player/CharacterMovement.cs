@@ -111,4 +111,5 @@ public class CharacterMovement : MonoBehaviour
         _camera.transform.DOMove(currentPosCamera.position, 0.8f).SetEase(Ease.InOutSine);  
         _camera.transform.DORotate(currentPosCamera.eulerAngles, 0.8f).SetEase(Ease.InOutSine);
     }
+    
 }
